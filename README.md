@@ -7,7 +7,7 @@
 StudyConnect ist eine Plattform für Studierende, um Lernpartner zu finden.  
 Nutzer können nach Fach, Niveau und Lernformat passende Partner suchen.
 
-## Criteria Mapping M1
+##  Kriterien-Zuordnung M1
 
 | Criterion | File | Location |
 |----------|------|---------|
