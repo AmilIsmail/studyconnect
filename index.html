@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyConnect </title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+  <div class="logo">StudyConnect</div>
+
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#partners">Partners</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HOME -->
+  <section id="home">
+    <article>
+      <h1>Find your study partner</h1>
+      <p>The platform for students .</p>
+    </article>
+  </section>
+
+  <!-- SEARCH -->
+  <section id="search">
+    <article>
+      <h2>Start your search</h2>
+
+      <form action="#" method="get">
+
+        <div>
+          <label for="subject">Subject / Module:</label>
+          <input 
+            type="text" 
+            id="subject" 
+            name="subject" 
+            placeholder="e.g. Web Applications" 
+            required
+          >
+        </div>
+
+        <div>
+          <label for="level">Level:</label>
+          <select id="level" name="level">
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advanced">Advanced</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="format">Format:</label>
+          <select id="format" name="format">
+            <option value="online">Online</option>
+            <option value="inperson">In Person</option>
+            <option value="both">Both</option>
+          </select>
+        </div>
+
+        <button type="submit">Find Partner</button>
+
+      </form>
+    </article>
+  </section>
+
+  <!-- PARTNERS -->
+  <section id="partners">
+    <h2>Suggested Partners</h2>
+
+    <div class="grid-container">
+
+      <article class="group-card">
+        <h3>Anna</h3>
+        <p>Subject: Web Applications</p>
+        <p>Level: Beginner</p>
+        <button>Request</button>
+      </article>
+
+      <article class="group-card">
+        <h3>Amil</h3>
+        <p>Subject: Datenbank-1</p>
+        <p>Level: Intermediate</p>
+        <button>Request</button>
+      </article>
+
+      <article class="group-card">
+        <h3>Luca </h3>
+        <p>Subject: Algebra</p>
+        <p>Level: Advanced</p>
+        <button>Request</button>
+      </article>
+
+    </div>
+  </section>
+
+</main>
+
+<footer id="contact">
+  <p>© 2026 StudyConnect </p>
+</footer>
+
+</body>
+</html>
