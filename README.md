@@ -1,16 +1,15 @@
 # StudyConnect
 
 **Team:** Amil Ismail Khadida (315460)  
-**Repository:** https://github.com/DEIN-REPO-LINK
+**Repository:** https://github.com/AmilIsmail/studyconnect
 
-## Project Idea
-StudyConnect is a prototype web application that helps students find study partners.  
-Users can search for partners based on subject, level, and learning format.
+## Projektidee
+StudyConnect ist eine Plattform für Studierende, um Lernpartner zu finden.  
+Nutzer können nach Fach, Niveau und Lernformat passende Partner suchen.
 
-## URL Structure
-The main page is accessible via `/`.  
-Resources such as the stylesheet are loaded via `styles.css`.
-
+## URL-Struktur
+Die Hauptseite ist über `/` erreichbar.  
+Ressourcen wie das Stylesheet werden über `styles.css` eingebunden.
 ## Criteria Mapping M1
 
 | Criterion | File | Location |
