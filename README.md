@@ -20,5 +20,3 @@ Ressourcen wie das Stylesheet werden über `styles.css` eingebunden.
 | Media Query | styles.css | @media (max-width: 600px) |
 | URL structure | index.html | links and resources |
 
-## Note
-This project is a static HTML/CSS prototype without JavaScript.
