@@ -7,9 +7,6 @@
 StudyConnect ist eine Plattform für Studierende, um Lernpartner zu finden.  
 Nutzer können nach Fach, Niveau und Lernformat passende Partner suchen.
 
-## URL-Struktur
-Die Hauptseite ist über `/` erreichbar.  
-Ressourcen wie das Stylesheet werden über `styles.css` eingebunden.
 ## Criteria Mapping M1
 
 | Criterion | File | Location |
