@@ -3,110 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StudyConnect </title>
+  <title>StudyConnect | Home</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
 <header>
   <div class="logo">StudyConnect</div>
-
   <nav>
     <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#partners">Partners</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="register.html">Register</a></li>
     </ul>
   </nav>
 </header>
 
 <main>
-
-  <!-- HOME -->
-  <section id="home">
+  <section class="hero">
     <article>
-      <h1>Find your study partner</h1>
-      <p>The platform for students .</p>
+      <h1>Find your perfect study partner at HTWG Konstanz</h1>
+      <p>
+        StudyConnect is a prototype platform for HTWG students. After login or registration,
+        users can browse modules, search for study partners, send requests, and use the chat prototype.
+      </p>
+
+      <div class="button-row">
+        <a class="button-link" href="login.html">Login</a>
+        <a class="button-link secondary" href="register.html">Register</a>
+      </div>
     </article>
   </section>
 
-  <!-- SEARCH -->
-  <section id="search">
-    <article>
-      <h2>Start your search</h2>
-
-      <form action="#" method="get">
-
-        <div>
-          <label for="subject">Subject / Module:</label>
-          <input 
-            type="text" 
-            id="subject" 
-            name="subject" 
-            placeholder="e.g. Web Applications" 
-            required
-          >
-        </div>
-
-        <div>
-          <label for="level">Level:</label>
-          <select id="level" name="level">
-            <option value="beginner">Beginner</option>
-            <option value="intermediate">Intermediate</option>
-            <option value="advanced">Advanced</option>
-          </select>
-        </div>
-
-        <div>
-          <label for="format">Format:</label>
-          <select id="format" name="format">
-            <option value="online">Online</option>
-            <option value="inperson">In Person</option>
-            <option value="both">Both</option>
-          </select>
-        </div>
-
-        <button type="submit">Find Partner</button>
-
-      </form>
-    </article>
-  </section>
-
-  <!-- PARTNERS -->
-  <section id="partners">
-    <h2>Suggested Partners</h2>
-
+  <section>
+    <h2>How StudyConnect works</h2>
     <div class="grid-container">
-
       <article class="group-card">
-        <h3>Anna</h3>
-        <p>Subject: Web Applications</p>
-        <p>Level: Beginner</p>
-        <button>Request</button>
+        <h3>1. Login or Register</h3>
+        <p>Create an account or log in to access the full platform.</p>
       </article>
 
       <article class="group-card">
-        <h3>Amil</h3>
-        <p>Subject: Datenbank-1</p>
-        <p>Level: Intermediate</p>
-        <button>Request</button>
+        <h3>2. Browse Modules</h3>
+        <p>Explore modules from different HTWG faculties and semesters.</p>
       </article>
 
       <article class="group-card">
-        <h3>Luca </h3>
-        <p>Subject: Algebra</p>
-        <p>Level: Advanced</p>
-        <button>Request</button>
+        <h3>3. Connect with Partners</h3>
+        <p>Search for suitable study partners and send requests.</p>
       </article>
 
+      <article class="group-card">
+        <h3>4. Start Chatting</h3>
+        <p>After a request is accepted, communication continues in the chat prototype.</p>
+      </article>
     </div>
   </section>
-
 </main>
 
-<footer id="contact">
-  <p>© 2026 StudyConnect </p>
+<footer>
+  <p>© 2026 StudyConnect – HTWG Konstanz Prototype</p>
 </footer>
 
 </body>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyConnect | Chat</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">StudyConnect</div>
+  <nav>
+    <ul>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="modules.html">Modules</a></li>
+      <li><a href="search.html">Partners</a></li>
+      <li><a href="request.html">Requests</a></li>
+      <li><a href="chat.html">Chat</a></li>
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="index.html">Logout</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <h1>Chat with Anna Müller</h1>
+    <p>This is a static chat prototype. Access is shown only after login and accepted requests.</p>
+  </section>
+
+  <section class="chat-box">
+    <div class="message received">
+      <p><strong>Anna:</strong> Hi! Do you want to study Web Applications tomorrow?</p>
+    </div>
+
+    <div class="message sent">
+      <p><strong>You:</strong> Yes, tomorrow at 4 PM works for me.</p>
+    </div>
+
+    <div class="message received">
+      <p><strong>Anna:</strong> Perfect! Let’s meet in the library.</p>
+    </div>
+  </section>
+
+  <section>
+    <form class="chat-form">
+      <label for="chat-message">New Message</label>
+      <input type="text" id="chat-message" name="chat-message" placeholder="Write a message...">
+      <button type="submit">Send</button>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <p>© 2026 StudyConnect – HTWG Konstanz Prototype</p>
+</footer>
+
+</body>
+</html>
