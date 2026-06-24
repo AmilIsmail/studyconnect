@@ -1,76 +1,69 @@
 # StudyConnect
 
-**Team:** Amil Ismail Khadida (315460)
-**Repository:** https://github.com/AmilIsmail/studyconnect
+StudyConnect ist eine Webanwendung, die Studierenden dabei hilft, Lernpartner für ihre Module zu finden.
 
-## Projektidee
+## Verwendete Technologien
 
-StudyConnect ist eine Plattform für Studierende der HTWG Konstanz, um Lernpartner zu finden.
+* React + TypeScript
+* React Router
+* Node.js + Express
+* SQLite
+* JWT-Authentifizierung
+* Vitest
 
-Die Anwendung wurde von einem statischen HTML/CSS-Prototyp (M1) zu einer React- und TypeScript-Anwendung weiterentwickelt.
+## Installation
 
-Nutzer können sich registrieren oder anmelden, Module durchsuchen, passende Lernpartner finden, Anfragen verwalten und einen einfachen Chat-Prototyp verwenden.
-
----
-
-## Setup
+Abhängigkeiten installieren:
 
 ```bash
 npm install
+```
+
+Frontend starten:
+
+```bash
 npm run dev
 ```
 
-Die Anwendung läuft anschließend unter:
+Backend starten:
 
-```text
-http://localhost:5173
+```bash
+npm run backend
 ```
 
----
+Tests ausführen:
 
-## Kriterien-Zuordnung M2
+```bash
+npm test
+```
 
-| Kriterium | Datei | Zeile / Hinweis |
-|------------|--------|----------------|
-| npm + Vite | package.json, vite.config.ts | Projekt-Root |
-| TypeScript aktiv genutzt | src/types.ts | Z. 1–15: Interfaces `Module` und `Partner` |
-| Eigene Types/Interfaces | src/types.ts | Z. 1–7: `Module`, Z. 9–15: `Partner` |
-| Komponentenzerlegung | src/components/ | Header, Home, Login, Register, Dashboard, SearchFilters, ModuleCard, PartnerCard, Requests, Chat |
-| Props-Übergabe | src/App.tsx | Z. 60–156: Komponenten erhalten Props und Callback-Funktionen |
-| useState | src/App.tsx | Z. 20–26: States für Seite, Filter, Modul-Auswahl und Anzeige |
-| useEffect | src/App.tsx | Z. 28–35: localStorage laden und speichern |
-| Interaktive Filterung | src/App.tsx | Z. 37–44: Module werden nach Fakultät, Studiengang, Semester und Modul gefiltert |
-| Durchgängige Nutzeraktion | src/App.tsx | Z. 60–156: Login/Register → Dashboard → Search Partners → Filter → Show Suggestions |
-| Dynamische Anzeige | src/App.tsx | Z. 47–55 und Z. 124–159: Vorschläge, Module und Partner werden abhängig vom Zustand angezeigt |
+## Funktionen
 
-## Verwendete Komponenten
+* Registrierung und Login
+* Module suchen
+* Lernpartner finden
+* Lernanfragen senden
+* Anfragen annehmen oder ablehnen
+* Chat mit akzeptierten Lernpartnern
 
-* Header
-* Home
-* Login
-* Register
-* Dashboard
-* SearchFilters
-* ModuleCard
-* PartnerCard
-* Requests
-* Chat
+## Projektaufbau
 
-Die Komponenten sind in eigenen Dateien ausgelagert und werden in `App.tsx` zusammengeführt.
+```text
+Frontend (React)
+        ↓
+Backend (Express)
+        ↓
+Datenbank (SQLite)
+```
 
----
+Wir haben eine Single-Page-Anwendung verwendet, da die Anwendung interaktiv ist und kein Server-Side-Rendering benötigt.
 
-## Verwendete React Hooks
+## Tests
 
-### useState
+Folgende Tests wurden implementiert:
 
-Wird verwendet für:
+* Login-Test
+* SearchFilters-Test
+* Requests-Test
+* ModuleCard-Test
 
-* Seitennavigation
-* Suchfilter
-* Auswahl eines Moduls
-* Anzeige zusätzlicher Module
-
-### useEffect
-
-Wird verwendet, um Suchwerte im localStorage zu speichern und beim erneuten Laden wiederherzustellen.

@@ -1,0 +1,234 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #222;
+}
+
+header {
+  background: #005a9b;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+main {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+.hero,
+.profile-box,
+.chat-box,
+.group-card,
+section article,
+section {
+  background: white;
+  border-radius: 10px;
+}
+
+.hero,
+.profile-box,
+.chat-box,
+section article {
+  padding: 25px;
+}
+
+h1, h2, h3, h4 {
+  margin-top: 0;
+}
+
+form div {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+button,
+.button-link {
+  background: #005a9b;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+button:hover,
+.button-link:hover {
+  background: #00457a;
+}
+
+.secondary-btn,
+.button-link.secondary {
+  background: #6b7280;
+}
+
+.secondary-btn:hover,
+.button-link.secondary:hover {
+  background: #4b5563;
+}
+
+.button-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.group-card {
+  padding: 18px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.chat-box {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.message {
+  padding: 12px;
+  border-radius: 8px;
+  max-width: 75%;
+}
+
+.message.received {
+  background: #e5e7eb;
+  align-self: flex-start;
+}
+
+.message.sent {
+  background: #dbeafe;
+  align-self: flex-end;
+}
+
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 20px;
+}
+
+@media (max-width: 700px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .button-row {
+    flex-direction: column;
+  }
+
+  .message {
+    max-width: 100%;
+  }
+}
+.logo {
+  color: white;
+  text-decoration: none;
+}
+
+.link-button {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font: inherit;
+  font-weight: bold;
+  padding: 0;
+}
+
+.button-link {
+  display: inline-block;
+  background: #005a9b;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-weight: bold;
+}
+
+.secondary-btn,
+.button-link.secondary-btn {
+  background: #e5e7eb;
+  color: #222;
+}
+
+.error-message {
+  background: #ffe1e1;
+  border: 1px solid #d33;
+  border-radius: 8px;
+  color: #8a0000;
+  padding: 12px;
+}
+
+.status-message {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}

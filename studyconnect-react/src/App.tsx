@@ -1,3 +1,4 @@
+import { Routes, Route, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import Home from "./components/Home";
@@ -14,10 +15,9 @@ import { partners } from "./data/partners";
 import type { Module } from "./types";
 import "./App.css";
 
-type Page = "home" | "login" | "register" | "dashboard" | "search" | "chat" | "requests";
-
 function App() {
-  const [page, setPage] = useState<Page>("home");
+  const navigate = useNavigate();
+
   const [faculty, setFaculty] = useState("");
   const [program, setProgram] = useState("");
   const [semester, setSemester] = useState("");
@@ -59,125 +59,169 @@ function App() {
       <Header title="StudyConnect" />
 
       <main>
-        {page === "home" && (
-          <Home
-            onLogin={() => setPage("login")}
-            onRegister={() => setPage("register")}
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Home
+                onLogin={() => navigate("/login")}
+                onRegister={() => navigate("/register")}
+              />
+            }
           />
-        )}
 
-        {page === "login" && (
-          <Login
-            onLogin={() => setPage("dashboard")}
-            onBack={() => setPage("home")}
+          <Route
+            path="/login"
+            element={
+              <Login
+                onLogin={() => navigate("/dashboard")}
+                onBack={() => navigate("/")}
+              />
+            }
           />
-        )}
 
-        {page === "register" && (
-          <Register
-            onRegister={() => setPage("dashboard")}
-            onBack={() => setPage("home")}
+          <Route
+            path="/register"
+            element={
+              <Register
+                onRegister={() => navigate("/dashboard")}
+                onBack={() => navigate("/")}
+              />
+            }
           />
-        )}
 
-        {page === "dashboard" && (
-          <Dashboard
-            onSearch={() => setPage("search")}
-            onRequests={() => setPage("requests")}
-            onChat={() => setPage("chat")}
-            onLogout={() => setPage("home")}
+          <Route
+            path="/dashboard"
+            element={
+              <Dashboard
+                onSearch={() => navigate("/search")}
+                onRequests={() => navigate("/requests")}
+                onChat={() => navigate("/chat")}
+                onLogout={() => navigate("/")}
+              />
+            }
           />
-        )}
 
-        {page === "requests" && (
-          <Requests
-            onBack={() => setPage("dashboard")}
-            onChat={() => setPage("chat")}
+          <Route
+            path="/requests"
+            element={
+              <Requests
+                onBack={() => navigate("/dashboard")}
+                onChat={() => navigate("/chat")}
+              />
+            }
           />
-        )}
 
-        {page === "chat" && (
-          <Chat onBack={() => setPage("dashboard")} />
-        )}
+          <Route
+            path="/chat"
+            element={
+              <Chat onBack={() => navigate("/dashboard")} />
+            }
+          />
 
-        {page === "search" && (
-          <>
-            <button
-              type="button"
-              className="secondary-btn"
-              onClick={() => setPage("dashboard")}
-            >
-              Back to Dashboard
-            </button>
-
-            <SearchFilters
-              faculty={faculty}
-              setFaculty={setFaculty}
-              program={program}
-              setProgram={setProgram}
-              semester={semester}
-              setSemester={setSemester}
-              moduleSearch={moduleSearch}
-              setModuleSearch={setModuleSearch}
-            />
-
-            <section>
-              <h2>Available Modules</h2>
-
-              {filteredModules.length === 0 && (
-                <p>No exact match found. Here are some suggestions:</p>
-              )}
-
-              <div className="grid-container">
-                {visibleModules.map((module) => (
-                  <ModuleCard
-                    key={module.id}
-                    name={module.name}
-                    faculty={module.faculty}
-                    program={module.program}
-                    semester={module.semester}
-                    onShowSuggestions={() => setSelectedModule(module)}
-                  />
-                ))}
-              </div>
-
-              {suggestionModules.length > 3 && !showAllModules && (
-                <button type="button" onClick={() => setShowAllModules(true)}>
-                  Show More Modules
+          <Route
+            path="/search"
+            element={
+              <>
+                <button
+                  type="button"
+                  className="secondary-btn"
+                  onClick={() => navigate("/dashboard")}
+                >
+                  Back to Dashboard
                 </button>
-              )}
 
-              {showAllModules && (
-                <button type="button" onClick={() => setShowAllModules(false)}>
-                  Show Less
-                </button>
-              )}
-            </section>
+                <SearchFilters
+                  faculty={faculty}
+                  setFaculty={setFaculty}
+                  program={program}
+                  setProgram={setProgram}
+                  semester={semester}
+                  setSemester={setSemester}
+                  moduleSearch={moduleSearch}
+                  setModuleSearch={setModuleSearch}
+                />
 
-            {selectedModule && (
-              <section>
-                <h2>Suggested Partners for {selectedModule.name}</h2>
+                <section>
+                  <h2>Available Modules</h2>
 
-                <div className="grid-container">
-                  {suggestedPartners.length > 0 ? (
-                    suggestedPartners.map((partner) => (
-                      <PartnerCard
-                        key={partner.id}
-                        name={partner.name}
-                        program={partner.program}
-                        semester={partner.semester}
-                        format={partner.format}
-                        module={partner.module}
-                      />
-                    ))
-                  ) : (
-                    <p>No suggestions available for this module yet.</p>
+                  {filteredModules.length === 0 && (
+                    <p>
+                      No exact match found. Here are some suggestions:
+                    </p>
                   )}
-                </div>
-              </section>
-            )}
-          </>
-        )}
+
+                  <div className="grid-container">
+                    {visibleModules.map((module) => (
+                      <ModuleCard
+                        key={module.id}
+                        name={module.name}
+                        faculty={module.faculty}
+                        program={module.program}
+                        semester={module.semester}
+                        onShowSuggestions={() =>
+                          setSelectedModule(module)
+                        }
+                      />
+                    ))}
+                  </div>
+
+                  {suggestionModules.length > 3 &&
+                    !showAllModules && (
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setShowAllModules(true)
+                        }
+                      >
+                        Show More Modules
+                      </button>
+                    )}
+
+                  {showAllModules && (
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setShowAllModules(false)
+                      }
+                    >
+                      Show Less
+                    </button>
+                  )}
+                </section>
+
+                {selectedModule && (
+                  <section>
+                    <h2>
+                      Suggested Partners for{" "}
+                      {selectedModule.name}
+                    </h2>
+
+                    <div className="grid-container">
+                      {suggestedPartners.length > 0 ? (
+                        suggestedPartners.map((partner) => (
+                          <PartnerCard
+                            key={partner.id}
+                            name={partner.name}
+                            program={partner.program}
+                            semester={partner.semester}
+                            format={partner.format}
+                            module={partner.module}
+                          />
+                        ))
+                      ) : (
+                        <p>
+                          No suggestions available for this
+                          module yet.
+                        </p>
+                      )}
+                    </div>
+                  </section>
+                )}
+              </>
+            }
+          />
+        </Routes>
       </main>
     </>
   );
